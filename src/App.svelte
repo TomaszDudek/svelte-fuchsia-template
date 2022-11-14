@@ -2,10 +2,12 @@
   import svelteLogo from './assets/svelte.svg'
   import viteLogo from './assets/vite.svg'
   import Counter from './lib/Counter.svelte'
+  import NavBar from "./lib/NavBar.svelte";
 
   let name = 'fuchsia'
 </script>
 
+<NavBar name={name}/>
 <main>
   <div>
     <h1>Hallo {name}!</h1>
@@ -35,6 +37,10 @@
 </main>
 
 <style>
+  main {
+    height: 200vh;
+  }
+
   .logo {
     height: 6em;
     padding: 1.5em;
