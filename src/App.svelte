@@ -2,10 +2,13 @@
   import svelteLogo from './assets/svelte.svg'
   import viteLogo from './assets/vite.svg'
   import Counter from './lib/Counter.svelte'
+
+  let name = 'fuchsia'
 </script>
 
 <main>
   <div>
+    <h1>Hallo {name}!</h1>
     <a href="https://fuchsia.tomaszdudek.de/" target="_blank" rel="noreferrer">
       <img src="public/favicon.svg" class="logo fuchsia" alt="Fuchsia Logo" />
     </a>
@@ -16,7 +19,7 @@
       <img src={svelteLogo} class="logo svelte" alt="Svelte Logo" />
     </a>
   </div>
-  <h1>Fuchsia + Vite + Svelte</h1>
+  <h2>Fuchsia + Vite + Svelte</h2>
 
   <div class="card">
     <Counter />
