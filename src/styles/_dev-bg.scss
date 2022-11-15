@@ -1,0 +1,35 @@
+$map-breakpoint-colors: (
+        default: red,
+        $bp-phone-landscape-min: green,
+        $bp-tablet-portrait-min: blue,
+        $bp-tablet-landscape-min: cyan,
+        $bp-desktop-small-min: magenta,
+        $bp-desktop-large-min: yellow,
+        $bp-desktop-extra-large-min: black,
+);
+
+@mixin dev-bg() {
+  @each $breakpoint, $color in $map-breakpoint-colors {
+    @if $breakpoint == 'default' {
+      @include striped-background($color);
+    } @else {
+      @include breakpoint($breakpoint) {
+        @include striped-background($color);
+      }
+    }
+  }
+}
+
+@mixin striped-background($color) {
+  $alpha: .0125;
+  $beta: .05;
+  $distance: 8px;
+
+  background: repeating-linear-gradient(
+                  -45deg,
+                  rgba($color, $alpha),
+                  rgba($color, $alpha) $distance,
+                  rgba($color, $beta) $distance,
+                  rgba($color, $beta) ($distance * 2),
+  );
+}

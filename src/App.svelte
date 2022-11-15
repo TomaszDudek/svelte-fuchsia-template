@@ -39,6 +39,7 @@
 <style>
   main {
     height: 200vh;
+    padding-top: 100px;
   }
 
   .logo {
