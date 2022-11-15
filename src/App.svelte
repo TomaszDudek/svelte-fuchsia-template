@@ -2,7 +2,7 @@
   import svelteLogo from './assets/svelte.svg'
   import viteLogo from './assets/vite.svg'
   import Counter from './lib/Counter.svelte'
-  import PageHeader from "./lib/PageHeader.svelte";
+  import PageHeader from './lib/PageHeader.svelte';
 
   let name = 'fuchsia'
 </script>
