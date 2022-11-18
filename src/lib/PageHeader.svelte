@@ -44,13 +44,16 @@
       justify-content: space-between;
     }
 
-    &__brand-holder {}
+    &__brand-holder {
+      color: $c-brand-primary;
+      text-transform: uppercase;
+    }
 
     &__spacer {
       margin: 0 auto;
     }
 
-    &__brand-holder {}
+    &__navigation-holder {}
 
     @media (prefers-color-scheme: light) {
       &--is-sticky {
@@ -61,4 +64,4 @@
 
 </style>
 
-<svelte:window bind:scrollY={y}/>
+<svelte:window bind:scrollY|passive={y}/>
