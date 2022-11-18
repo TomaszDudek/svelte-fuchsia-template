@@ -1,4 +1,6 @@
 <script>
+  import SideNavigation from './lib/SideNavigation.svelte';
+
   export let brandName;
   import BrandLogo from './assets/fuchsia-muster-logo.svg';
   import PageHeader from './lib/PageHeader.svelte';
@@ -36,10 +38,10 @@
     following...
   </Section>
 </main>
-
+<SideNavigation/>
 <style>
   main {
-    height: 200vh;
+    min-height: 200vh;
   }
 
   .logo {

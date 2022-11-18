@@ -1,5 +1,6 @@
 <script>
-    import { onMount } from 'svelte'
+    import { onMount } from 'svelte';
+    import { sectionNavItems } from '../store.js';
 
     export let title = '';
     export let highlighted = false;
@@ -8,7 +9,9 @@
 
     onMount(() => {
         if (title !== '') {
-            console.log('onMont', title); // todo: remove before merge!
+            // console.log('onMont', title); // todo: remove before merge!
+            $sectionNavItems = [...$sectionNavItems, title];
+            console.log('$sectionNavItems', $sectionNavItems); // todo: remove before merge!
         }
     })
 
@@ -17,7 +20,7 @@
     }
 </script>
 
-<section class="section{highlighted ? ' section--is-highlighted' : ''}">
+<section class="section{highlighted ? ' section--is-highlighted' : ''}" id="{title.replace(/\s/g,'')}">
     {#if (title)}
         <div class="section__header">
             <h2 class="section__tilte">{title}</h2>
