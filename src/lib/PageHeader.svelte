@@ -1,11 +1,14 @@
 <script>
     import Navigation from "./Navigation.svelte";
+    import { scrollPositionY } from '../store.js';
+    import SvgIcon from './SvgIcon.svelte';
+    import { lightBulbLine, burgerMenu } from '../assets/icons/icons.js'
 
     export let brandName
-    let y;
+
 </script>
 
-<header class="page-header{ y > 100 ? ' page-header--is-sticky': ''}">
+<header class="page-header{ $scrollPositionY > 100 ? ' page-header--is-sticky': ''}">
     <div class="page-header__container container">
         <div class="page-header__brand-holder">
             {brandName}
@@ -13,6 +16,7 @@
         <div class="page-header__spacer"></div>
         <div class="page-header__navigation-holder">
             <Navigation />
+            <SvgIcon d={lightBulbLine} />
         </div>
     </div>
 </header>
@@ -53,7 +57,10 @@
       margin: 0 auto;
     }
 
-    &__navigation-holder {}
+    &__navigation-holder {
+      display: flex;
+      align-items: center;
+    }
 
     @media (prefers-color-scheme: light) {
       &--is-sticky {
@@ -64,4 +71,3 @@
 
 </style>
 
-<svelte:window bind:scrollY|passive={y}/>
