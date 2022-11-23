@@ -5,7 +5,7 @@
     export let title = '';
     export let highlighted = false;
 
-    const id = title?.replace(/\s/g,'');
+    const id = title?.replace(/\s/g,'').replace('&', '');
 
     onMount(() => {
         if (title !== '') {
