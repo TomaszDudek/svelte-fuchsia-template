@@ -4,6 +4,7 @@
 
     export let title = '';
     export let highlighted = false;
+    export let sectionContainer = true;
 
     const id = title?.replace(/\s/g,'').replace('&', '');
 
@@ -20,9 +21,11 @@
             <h2 class="section__tilte">{title}</h2>
         </div>
     {/if}
-    <div class="section__container">
-       <slot></slot>
+
+    <div class="{sectionContainer === true ? 'section__container' : ''}">
+        <slot></slot>
     </div>
+
 </section>
 
 <style lang="scss">

@@ -1,11 +1,22 @@
 <script>
+    import { onMount } from 'svelte';
+
     export let brandName;
-    import svelteLogo from '../assets/svelte.svg'
-    import viteLogo from '../assets/vite.svg'
-    import fuchsiaLogo from '../assets/fuchsia-muster-icon.svg'
+    export let id = '';
+
+    import svelteLogo from '../assets/svelte.svg';
+    import viteLogo from '../assets/vite.svg';
+    import fuchsiaLogo from '../assets/fuchsia-muster-icon.svg';
+    import { sectionNavItems } from '../store.js';
+
+    onMount(() => {
+        if (id !== '') {
+            $sectionNavItems = [...$sectionNavItems, {title: 'Top', id: id}];
+        }
+    })
 </script>
 
-<section class="stage">
+<section class="stage" {id}>
 
     <div>
         <h1>Hallo {brandName}!</h1>
