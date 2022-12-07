@@ -17,14 +17,20 @@
     ];
 
     let pool = logos.slice(itemsToShow);
+    let lastInt = null;
 
     const getRandomInt = (max) => {
-        return Math.floor(Math.random() * max);
+        let randomInt = Math.floor(Math.random() * max);
+        while (randomInt === lastInt) {
+            randomInt = Math.floor(Math.random() * max);
+        }
+        lastInt = randomInt;
+        return randomInt;
     }
 
     const exchange = () => {
         setTimeout(() => {
-            const element = document.getElementsByClassName('logo-carpet__image')[getRandomInt(itemsToShow)];
+            const element = document.querySelectorAll('.logo-carpet__image')[getRandomInt(itemsToShow)];
             element.classList.add('logo-carpet__image--fade');
             pool = [...pool, { src: element.src, alt: element.alt }];
 
