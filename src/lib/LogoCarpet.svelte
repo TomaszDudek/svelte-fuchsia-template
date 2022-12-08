@@ -1,7 +1,13 @@
 <script>
     import { onMount } from 'svelte';
 
-    const itemsToShow = 5;
+    export let itemsToShow = 5;
+    export let delay = 1000;
+    export let interval = 6000;
+    export let animationBuffer = 1500;
+
+    const fadeClass = 'logo-carpet__image--fade';
+    const fadeElementClass = 'logo-carpet__image';
 
     let logos = [
         { src: 'https://via.placeholder.com/175x175?text=1', alt: 'Logo 1' },
@@ -30,22 +36,22 @@
 
     const exchange = () => {
         setTimeout(() => {
-            const element = document.querySelectorAll('.logo-carpet__image')[getRandomInt(itemsToShow)];
-            element.classList.add('logo-carpet__image--fade');
-            pool = [...pool, { src: element.src, alt: element.alt }];
+            setInterval(() => {
+                const element = document.querySelectorAll(`.${fadeElementClass}`)[getRandomInt(itemsToShow)];
+                if (element) {
+                    element.classList.add(fadeClass);
+                    pool = [...pool, { src: element.src, alt: element.alt }];
 
-            setTimeout(() => {
+                    setTimeout(() => {
+                        element.src = pool[0].src;
+                        element.alt = pool[0].alt;
+                        pool.shift();
+                        element.classList.remove(fadeClass);
+                    }, animationBuffer);
+                }
 
-                setTimeout(() => {
-                    element.src = pool[0].src;
-                    element.alt = pool[0].alt;
-                    pool.shift();
-                });
-
-                element.classList.remove('logo-carpet__image--fade');
-            }, 3000);
-            exchange();
-        }, 5000);
+            }, interval);
+        }, delay);
     }
 
     onMount(() => {
@@ -75,9 +81,12 @@
     &__image {
       opacity: 1;
       transition: opacity 1000ms ease-in-out;
+      display: block;
 
       &--fade {
         opacity: 0;
+        transition: opacity 500ms ease-in-out;
+        transition-delay: 100ms;
       }
     }
   }
