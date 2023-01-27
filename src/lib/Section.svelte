@@ -5,6 +5,7 @@
     export let title = '';
     export let highlighted = false;
     export let sectionContainer = true;
+    export let noPaddingBottom = false;
 
     const id = title?.replace(/\s/g,'').replace('&', '');
 
@@ -15,7 +16,7 @@
     })
 </script>
 
-<section class="section{highlighted ? ' section--is-highlighted' : ''}" {id}>
+<section class="section{highlighted ? ' section--is-highlighted' : ''}" {id} style={noPaddingBottom ? 'padding-bottom: 0' : ''}>
     {#if (title)}
         <div class="section__header">
             <h2 class="section__tilte">{title}</h2>

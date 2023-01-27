@@ -9,16 +9,40 @@
   import Textarea from './lib/Textarea.svelte';
   import LogoCarpet from './lib/LogoCarpet.svelte';
   import YoutubePlayer from './lib/YoutubePlayer.svelte';
+  import BackToTop from './lib/BackToTop.svelte';
+  import Table from './lib/Table.svelte';
+  import Tabs from './lib/Tabs.svelte';
+  import ExampleTabOne from './lib/ExampleTabOne.svelte';
+  import ExampleTabThree from './lib/ExampleTabThree.svelte';
+  import ExampleTabTwo from './lib/ExampleTabTwo.svelte';
 
   export let brandName;
 
   const loremIpsum = 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.'
+
+  const data = [];
+  for (let i = 0; i < 50; i++) {
+    data.push({
+      Name: "Person " + (i + 1),
+      Age: Math.floor(Math.random() * 100),
+      City: "City " + (i + 1),
+      Order: `B-${Math.floor(Math.random() * 10000)}`,
+      Account: `KD-${Math.floor(Math.random() * 100000)}`,
+    });
+  }
+
+  const tabsItems = [
+    { label: 'The Tab One', component: ExampleTabOne },
+    { label: 'The Tab Two', component: ExampleTabTwo },
+    { label: 'The Tab Three', component: ExampleTabThree },
+  ];
 </script>
 
 <ScrollSpy />
 <PageHeader brandName={brandName}/>
 <main>
   <Stage brandName="{brandName}" id="pageTop"/>
+
   <Section title="This is the first Section" highlighted>
     <p>{loremIpsum}</p>
   </Section>
@@ -160,8 +184,15 @@
     <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
     <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
   </Section>
-  <Section title="The Youtube Player" sectionContainer=false>
+  <Section title="The Youtube Player" sectionContainer=false noPaddingBottom=true>
     <YoutubePlayer/>
+  </Section>
+  <Section title="The Tabs Component" highlighted="true">
+    <Tabs {tabsItems} />
+  </Section>
+  <Section title="Tabelle">
+    <Table tableData={data} />
+    <Table tableData={data} showSlider=true />
   </Section>
   <Section title="Buttons">
     <button type="button">button Text</button>
@@ -184,6 +215,7 @@
   </Section>
 </main>
 <SideNavigation/>
+<BackToTop/>
 <style>
   main {
     min-height: 200vh;
