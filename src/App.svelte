@@ -43,10 +43,10 @@
 <main>
   <Stage brandName="{brandName}" id="pageTop"/>
 
-  <Section title="This is the first Section" highlighted>
+  <Section title="This is the first Section">
     <p>{loremIpsum}</p>
   </Section>
-  <Section>
+  <Section highlighted>
     <LogoCarpet/>
   </Section>
   <Section title="This is the next Section">

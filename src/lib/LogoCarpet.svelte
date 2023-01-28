@@ -10,16 +10,13 @@
     const fadeElementClass = 'logo-carpet__image';
 
     let logos = [
-        { src: 'https://via.placeholder.com/175x175?text=1', alt: 'Logo 1' },
-        { src: 'https://via.placeholder.com/175x175?text=2', alt: 'Logo 2' },
-        { src: 'https://via.placeholder.com/175x175?text=3', alt: 'Logo 3' },
-        { src: 'https://via.placeholder.com/175x175?text=4', alt: 'Logo 4' },
-        { src: 'https://via.placeholder.com/175x175?text=5', alt: 'Logo 5' },
-        { src: 'https://via.placeholder.com/175x175?text=6', alt: 'Logo 6' },
-        { src: 'https://via.placeholder.com/175x175?text=7', alt: 'Logo 7' },
-        { src: 'https://via.placeholder.com/175x175?text=8', alt: 'Logo 8' },
-        { src: 'https://via.placeholder.com/175x175?text=9', alt: 'Logo 9' },
-        { src: 'https://via.placeholder.com/175x175?text=10', alt: 'Logo 10' },
+        { src: './src/assets/images/example-data/Mercedes-Benz-Logo.svg.png', alt: 'Mercedes Logo'},
+        { src: './src/assets/images/example-data/Allianz.svg.png', alt: 'Allianz Logo'},
+        { src: './src/assets/images/example-data/Henkel-Logo.svg.png', alt: 'Henkel Logo'},
+        { src: './src/assets/images/example-data/Volvo_logo1.svg.png', alt: 'Volvo'},
+        { src: './src/assets/images/example-data/Groupe_PSA_logo.svg.png', alt: 'PSA Logo'},
+        { src: './src/assets/images/example-data/Adobe_Corporate_Logo.png', alt: 'Adobe Logo'},
+        { src: './src/assets/images/example-data/UBS_Logo_SVG.svg.png', alt: 'UBS Logo'},
     ];
 
     let pool = logos.slice(itemsToShow);
@@ -64,24 +61,30 @@
   .logo-carpet {
 
     &__list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-    }
-
-    &__container {
-      display: block;
+      list-style: none;
       margin: 0;
       padding: 0;
     }
 
+    &__container {
+      align-items: center;
+      display: flex;
+      height: 175px;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+      width: 175px;
+    }
+
     &__image {
+      display: block;
+      height: auto;
       opacity: 1;
       transition: opacity 1000ms ease-in-out;
-      display: block;
+      width: 100%;
 
       &--fade {
         opacity: 0;
@@ -97,13 +100,10 @@
 </style>
 
 <div class="logo-carpet">
-    <h3>Logo Carpet Component works!</h3>
     <ul class="logo-carpet__list">
         {#each logos.slice(0, itemsToShow) as logo}
             <li class="logo-carpet__container">
                 <img loading="lazy"
-                     height="175"
-                     width="175"
                      class="logo-carpet__image"
                      src={logo.src}
                      alt={logo.alt}>
