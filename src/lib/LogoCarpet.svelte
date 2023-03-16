@@ -10,13 +10,13 @@
     const fadeElementClass = 'logo-carpet__image';
 
     let logos = [
-        { src: 'svelte-fuchsia-template/images/example-data/Mercedes-Benz-Logo.svg.png', alt: 'Mercedes Logo'},
-        { src: 'svelte-fuchsia-template/images/example-data/Allianz.svg.png', alt: 'Allianz Logo'},
-        { src: 'svelte-fuchsia-template/images/example-data/Henkel-Logo.svg.png', alt: 'Henkel Logo'},
-        { src: 'svelte-fuchsia-template/images/example-data/Volvo_logo1.svg.png', alt: 'Volvo'},
-        { src: 'svelte-fuchsia-template/images/example-data/Groupe_PSA_logo.svg.png', alt: 'PSA Logo'},
-        { src: 'svelte-fuchsia-template/images/example-data/Adobe_Corporate_Logo.png', alt: 'Adobe Logo'},
-        { src: 'svelte-fuchsia-template/images/example-data/UBS_Logo_SVG.svg.png', alt: 'UBS Logo'},
+        { src: 'images/example-data/Mercedes-Benz-Logo.svg.png', alt: 'Mercedes Logo'},
+        { src: 'images/example-data/Allianz.svg.png', alt: 'Allianz Logo'},
+        { src: 'images/example-data/Henkel-Logo.svg.png', alt: 'Henkel Logo'},
+        { src: 'images/example-data/Volvo_logo1.svg.png', alt: 'Volvo'},
+        { src: 'images/example-data/Groupe_PSA_logo.svg.png', alt: 'PSA Logo'},
+        { src: 'images/example-data/Adobe_Corporate_Logo.png', alt: 'Adobe Logo'},
+        { src: 'images/example-data/UBS_Logo_SVG.svg.png', alt: 'UBS Logo'},
     ];
 
     let pool = logos.slice(itemsToShow);
