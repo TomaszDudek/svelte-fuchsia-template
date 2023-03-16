@@ -30,7 +30,11 @@
 <div class="tabs">
     <ul role="tablist" class="tabs__list">
         {#each tabsItems as item, idx}
-            <li class="tabs__list-item {isActiveTab(idx) ? 'active' : ''}" role="tab">
+            <li class="tabs__list-item {isActiveTab(idx) ? 'active' : ''}"
+                role="tab"
+                aria-controls="tab-panel-{idx}-{id}"
+                aria-selected={isActiveTab(idx)}
+            >
                 <button
                         class="tabs__button"
                         bind:this={buttonRefs[idx]}
@@ -38,8 +42,6 @@
                         on:keyup={handleKeyUp}
                         id="tab-label-{idx}-{id}"
                         tabindex={isActiveTab(idx) ? 0 : -1}
-                        aria-controls="tab-panel-{idx}-{id}"
-                        aria-selected={isActiveTab(idx)}
                 >
                     {item.label}
                 </button>
