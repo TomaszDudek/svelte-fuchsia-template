@@ -11,6 +11,7 @@
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "2.0.3",
     "breakpoint-sass": "^3.0.0",
+    "prettier": "2.8.4",
     "sass": "^1.53.0",
     "svelte": "^3.52.0",
     "svelte-preprocess": "5.0.2",
