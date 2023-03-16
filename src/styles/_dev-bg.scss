@@ -1,11 +1,11 @@
 $map-breakpoint-colors: (
-        default: red,
-        $bp-phone-landscape-min: green,
-        $bp-tablet-portrait-min: blue,
-        $bp-tablet-landscape-min: cyan,
-        $bp-desktop-small-min: magenta,
-        $bp-desktop-large-min: yellow,
-        $bp-desktop-extra-large-min: black,
+  default: red,
+  $bp-phone-landscape-min: green,
+  $bp-tablet-portrait-min: blue,
+  $bp-tablet-landscape-min: cyan,
+  $bp-desktop-small-min: magenta,
+  $bp-desktop-large-min: yellow,
+  $bp-desktop-extra-large-min: black,
 );
 
 @mixin dev-bg() {
@@ -21,15 +21,15 @@ $map-breakpoint-colors: (
 }
 
 @mixin striped-background($color) {
-  $alpha: .0125;
-  $beta: .05;
+  $alpha: 0.0125;
+  $beta: 0.05;
   $distance: 8px;
 
   background: repeating-linear-gradient(
-                  -45deg,
-                  rgba($color, $alpha),
-                  rgba($color, $alpha) $distance,
-                  rgba($color, $beta) $distance,
-                  rgba($color, $beta) ($distance * 2),
+    -45deg,
+    rgba($color, $alpha),
+    rgba($color, $alpha) $distance,
+    rgba($color, $beta) $distance,
+    rgba($color, $beta) ($distance * 2)
   );
 }

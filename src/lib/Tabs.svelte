@@ -1,73 +1,73 @@
 <script>
-    import { tick } from 'svelte';
-    import { fade } from 'svelte/transition';
+  import { tick } from 'svelte';
+  import { fade } from 'svelte/transition';
 
-    export let tabsItems = [];
-    export let activeTabValue = 0;
+  export let tabsItems = [];
+  export let activeTabValue = 0;
 
-    // TODO extract utility for generating id?
-    export let id = `${Date.now().toString()}`;
-    const buttonRefs = new Array(tabsItems.length);
+  // TODO extract utility for generating id?
+  export let id = `${Date.now().toString()}`;
+  const buttonRefs = new Array(tabsItems.length);
 
-    const setActiveIndex = (index) => (activeTabValue = index);
+  const setActiveIndex = (index) => (activeTabValue = index);
 
-    const handleKeyUp = async (evt) => {
-        if (evt.key === 'ArrowRight') {
-            activeTabValue = activeTabValue + 1 >= tabsItems.length ? 0 : activeTabValue + 1;
-            await tick();
-            buttonRefs[activeTabValue].focus();
-        }
-        if (evt.key === 'ArrowLeft') {
-            activeTabValue = activeTabValue - 1 < 0 ? tabsItems.length - 1 : activeTabValue - 1;
-            await tick();
-            buttonRefs[activeTabValue].focus();
-        }
-    };
+  const handleKeyUp = async (evt) => {
+    if (evt.key === 'ArrowRight') {
+      activeTabValue = activeTabValue + 1 >= tabsItems.length ? 0 : activeTabValue + 1;
+      await tick();
+      buttonRefs[activeTabValue].focus();
+    }
+    if (evt.key === 'ArrowLeft') {
+      activeTabValue = activeTabValue - 1 < 0 ? tabsItems.length - 1 : activeTabValue - 1;
+      await tick();
+      buttonRefs[activeTabValue].focus();
+    }
+  };
 
-    $: isActiveTab = (index) => activeTabValue === index;
+  $: isActiveTab = (index) => activeTabValue === index;
 </script>
 
 <div class="tabs">
-    <ul role="tablist" class="tabs__list">
-        {#each tabsItems as item, idx}
-            <li class="tabs__list-item {isActiveTab(idx) ? 'active' : ''}"
-                role="tab"
-                aria-controls="tab-panel-{idx}-{id}"
-                aria-selected={isActiveTab(idx)}
-            >
-                <button
-                        class="tabs__button"
-                        bind:this={buttonRefs[idx]}
-                        on:click={() => setActiveIndex(idx)}
-                        on:keyup={handleKeyUp}
-                        id="tab-label-{idx}-{id}"
-                        tabindex={isActiveTab(idx) ? 0 : -1}
-                >
-                    {item.label}
-                </button>
-            </li>
-        {/each}
-    </ul>
-    <div class="tabs__panels-holder">
-        {#each tabsItems as item, idx}
-            {#if activeTabValue === idx}
-                <div
-                        class="tabs__panel"
-                        in:fade
-                        role="tabpanel"
-                        id="tab-panel-{idx}-{id}"
-                        aria-labelledby="tab-label-{idx}-{id}"
-                >
-                    <svelte:component this={item.component} />
-                </div>
-            {/if}
-        {/each}
-    </div>
+  <ul role="tablist" class="tabs__list">
+    {#each tabsItems as item, idx}
+      <li
+        class="tabs__list-item {isActiveTab(idx) ? 'active' : ''}"
+        role="tab"
+        aria-controls="tab-panel-{idx}-{id}"
+        aria-selected={isActiveTab(idx)}
+      >
+        <button
+          class="tabs__button"
+          bind:this={buttonRefs[idx]}
+          on:click={() => setActiveIndex(idx)}
+          on:keyup={handleKeyUp}
+          id="tab-label-{idx}-{id}"
+          tabindex={isActiveTab(idx) ? 0 : -1}
+        >
+          {item.label}
+        </button>
+      </li>
+    {/each}
+  </ul>
+  <div class="tabs__panels-holder">
+    {#each tabsItems as item, idx}
+      {#if activeTabValue === idx}
+        <div
+          class="tabs__panel"
+          in:fade
+          role="tabpanel"
+          id="tab-panel-{idx}-{id}"
+          aria-labelledby="tab-label-{idx}-{id}"
+        >
+          <svelte:component this={item.component} />
+        </div>
+      {/if}
+    {/each}
+  </div>
 </div>
 
 <style lang="scss">
   .tabs {
-
     &__list {
       align-items: center;
       display: flex;
@@ -80,7 +80,6 @@
     }
 
     &__list-item {
-
       &.active {
         color: fuchsia;
 

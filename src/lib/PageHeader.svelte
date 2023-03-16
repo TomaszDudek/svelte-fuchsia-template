@@ -1,21 +1,20 @@
 <script>
-    import Navigation from "./Navigation.svelte";
-    import { scrollPositionY } from '../store.js';
+  import Navigation from './Navigation.svelte';
+  import { scrollPositionY } from '../store.js';
 
-    export let brandName
-
+  export let brandName;
 </script>
 
-<header class="page-header{ $scrollPositionY > 100 ? ' page-header--is-sticky': ''}">
-    <div class="page-header__container container">
-        <div class="page-header__brand-holder">
-            {brandName}
-        </div>
-        <div class="page-header__spacer"></div>
-        <div class="page-header__navigation-holder">
-            <Navigation />
-        </div>
+<header class="page-header{$scrollPositionY > 100 ? ' page-header--is-sticky' : ''}">
+  <div class="page-header__container container">
+    <div class="page-header__brand-holder">
+      {brandName}
     </div>
+    <div class="page-header__spacer" />
+    <div class="page-header__navigation-holder">
+      <Navigation />
+    </div>
+  </div>
 </header>
 
 <style lang="scss">
@@ -34,10 +33,10 @@
     z-index: 900;
 
     &--is-sticky {
-      background-color: rgba(white, .15);
+      background-color: rgba(white, 0.15);
       height: 72px;
       transition: all 400ms ease;
-      box-shadow: rgba(black, .15) 0 1px 6px;
+      box-shadow: rgba(black, 0.15) 0 1px 6px;
     }
 
     &__container {
@@ -61,10 +60,8 @@
 
     @media (prefers-color-scheme: light) {
       &--is-sticky {
-        background-color: rgba(white, .85);
+        background-color: rgba(white, 0.85);
       }
     }
   }
-
 </style>
-

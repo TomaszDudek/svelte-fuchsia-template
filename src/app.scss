@@ -1,40 +1,40 @@
 /* Write your global styles here, in SCSS syntax. Variables and mixins from the src/variables.scss file are available here without importing */
 
 @font-face {
-  font-family: "Nunito";
-  src: local("Nunito Light"), local("Nunito-Light"),
-  url("assets/fonts/Nunito-Light.woff2") format("woff2"),
-  url("assets/fonts/Nunito-Light.woff") format("woff");
+  font-family: 'Nunito';
+  src: local('Nunito Light'), local('Nunito-Light'),
+    url('assets/fonts/Nunito-Light.woff2') format('woff2'),
+    url('assets/fonts/Nunito-Light.woff') format('woff');
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Nunito";
-  src: local("Nunito Light Italic"), local("Nunito-LightItalic"),
-  url("assets/fonts/Nunito-LightItalic.woff2") format("woff2"),
-  url("assets/fonts/Nunito-LightItalic.woff") format("woff");
+  font-family: 'Nunito';
+  src: local('Nunito Light Italic'), local('Nunito-LightItalic'),
+    url('assets/fonts/Nunito-LightItalic.woff2') format('woff2'),
+    url('assets/fonts/Nunito-LightItalic.woff') format('woff');
   font-weight: 300;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Nunito";
-  src: local("Nunito Regular"), local("Nunito-Regular"),
-  url("assets/fonts/Nunito-Regular.woff2") format("woff2"),
-  url("assets/fonts/Nunito-Regular.woff") format("woff");
+  font-family: 'Nunito';
+  src: local('Nunito Regular'), local('Nunito-Regular'),
+    url('assets/fonts/Nunito-Regular.woff2') format('woff2'),
+    url('assets/fonts/Nunito-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Nunito";
-  src: local("Nunito Italic"), local("Nunito-Italic"),
-  url("assets/fonts/Nunito-Italic.woff2") format("woff2"),
-  url("assets/fonts/Nunito-Italic.woff") format("woff");
+  font-family: 'Nunito';
+  src: local('Nunito Italic'), local('Nunito-Italic'),
+    url('assets/fonts/Nunito-Italic.woff2') format('woff2'),
+    url('assets/fonts/Nunito-Italic.woff') format('woff');
   font-weight: normal;
   font-style: italic;
   font-display: swap;

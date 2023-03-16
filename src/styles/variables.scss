@@ -1,6 +1,5 @@
 /* Variables and mixins declared here will be available in all other SCSS files */
 
-
 /* Colors */
 $c-brand-primary: fuchsia;
 $c-brand-secondary: cyan;
@@ -22,7 +21,6 @@ $bp-tablet-portrait-max: $bp-tablet-landscape-min - 1;
 $bp-tablet-landscape-max: $bp-desktop-small-min - 1;
 $bp-desktop-small-max: $bp-desktop-large-min - 1;
 $bp-desktop-large-max: $bp-desktop-extra-large-min -1;
-
 
 /* Imports */
 @import 'breakpoint-sass/stylesheets/breakpoint';

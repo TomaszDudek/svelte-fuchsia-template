@@ -1,13 +1,16 @@
 <script>
-    export let placeholder = 'placeholder';
-    export let label = 'input label';
+  export let placeholder = 'placeholder';
+  export let label = 'input label';
 
-    const id = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(2, 10);
+  const id = Math.random()
+    .toString(36)
+    .replace(/[^a-z]+/g, '')
+    .substr(2, 10);
 </script>
 
 <div class="input">
-    <label for={id} class="input__label">{label}</label>
-    <textarea class="input__field" {id} {placeholder}></textarea>
+  <label for={id} class="input__label">{label}</label>
+  <textarea class="input__field" {id} {placeholder} />
 </div>
 
 <style lang="scss">
@@ -15,10 +18,10 @@
     margin-bottom: 30px;
 
     &__label {
-      font-family: "Nunito",sans-serif;
-      font-size: .75rem;
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.75rem;
       font-weight: bold;
-      letter-spacing: .075em;
+      letter-spacing: 0.075em;
       line-height: 1em;
       text-transform: uppercase;
       cursor: pointer;
@@ -29,7 +32,7 @@
     }
 
     &__field {
-      font-family: "Nunito",sans-serif;
+      font-family: 'Nunito', sans-serif;
       font-size: 16px;
       line-height: 1.5;
       font-weight: normal;
@@ -42,11 +45,11 @@
       min-height: 230px;
       min-width: 100%;
       padding: 1em;
-      transition: border-color 635ms ease,box-shadow 3250ms ease;
+      transition: border-color 635ms ease, box-shadow 3250ms ease;
       width: 100%;
-      background-color: rgba(0,0,0,0.5);
-      border-color: rgba(255,255,255,0.5);
-      color: rgba(255,255,255,0.75);
+      background-color: rgba(0, 0, 0, 0.5);
+      border-color: rgba(255, 255, 255, 0.5);
+      color: rgba(255, 255, 255, 0.75);
 
       &:active,
       &:focus {
@@ -57,8 +60,8 @@
       }
 
       @media (prefers-color-scheme: light) {
-        background-color: rgba(255,255,255,0.5);
-        border-color: rgba(0,0,0,0.5);
+        background-color: rgba(255, 255, 255, 0.5);
+        border-color: rgba(0, 0, 0, 0.5);
         color: black;
       }
     }
