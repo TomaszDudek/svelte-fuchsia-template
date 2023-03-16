@@ -38,6 +38,10 @@
   ];
 </script>
 
+<svelte:head>
+  <meta name="description" content="Fuchsia is a basic page template wiht strong focus on performance." />
+</svelte:head>
+
 <ScrollSpy />
 <PageHeader brandName={brandName}/>
 <main>
