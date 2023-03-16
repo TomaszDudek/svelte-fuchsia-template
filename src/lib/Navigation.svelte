@@ -1,4 +1,6 @@
 <script>
+    import DarkModeToggle from './DarkModeToggle.svelte';
+
     export let items = [
         {name: 'Home', href: '/', title: 'Homepage'},
         {name: 'Service', href: '/', title: 'Our service page'},
@@ -35,6 +37,7 @@
         </button>
     </div>
     <div class="navigation__random-action-container">
+        <DarkModeToggle/>
         <!--
         <div class="dark-mode-toggle" data-component="DarkModeToggleComponent">
             <button type="button" class="dark-mode-toggle__button" aria-label="toggle dark mode">
@@ -162,9 +165,10 @@
 
       &--close {
         animation: .5s cubic-bezier(.68, -.55, .27, 1.55) .5s 1 normal both running blob-up;
+        fill: white;
         position: fixed;
         right: 20px;
-        top: 10px;
+        top: 25px;
       }
     }
   }
