@@ -44,7 +44,7 @@
 </script>
 
 <div class="dark-mode-toggle">
-    <button on:click={toggleTheme} class="dark-mode-toggle__button">
+    <button on:click={toggleTheme} class="dark-mode-toggle__button" aria-label="Theme Toggle">
         <SvgIcon class="dark-mode-toggle__icon" d={lightBulbLine}/>
     </button>
 </div>
