@@ -15,6 +15,7 @@
   import ExampleTabOne from './lib/ExampleTabOne.svelte';
   import ExampleTabThree from './lib/ExampleTabThree.svelte';
   import ExampleTabTwo from './lib/ExampleTabTwo.svelte';
+  import KenBurns from 'svelte-ken-burns-slideshow';
 
   export let brandName;
 
@@ -36,6 +37,12 @@
     { label: 'The Tab One', component: ExampleTabOne },
     { label: 'The Tab Two', component: ExampleTabTwo },
     { label: 'The Tab Three', component: ExampleTabThree },
+  ];
+
+  const gallery = [
+    'images/example-gallery/03.jpg',
+    'images/example-gallery/05.jpg',
+    'images/example-gallery/07.jpg',
   ];
 </script>
 
@@ -218,6 +225,9 @@
   <Section title="Tabelle">
     <Table tableData={data} />
     <Table tableData={data} showSlider="true" />
+  </Section>
+  <Section class="section--is-relative" sectionContainer="false" style="aspect-ratio: 16 / 9">
+    <KenBurns images={gallery} />
   </Section>
   <Section title="Buttons">
     <button type="button">button Text</button>

@@ -17,9 +17,9 @@
 </script>
 
 <section
-  class="section{highlighted ? ' section--is-highlighted' : ''}"
+  class={['section', highlighted ? 'section--is-highlighted' : '', $$props.class].join(' ')}
+  style={[noPaddingBottom ? 'padding-bottom: 0' : '', $$props.style].join(' ')}
   {id}
-  style={noPaddingBottom ? 'padding-bottom: 0' : ''}
 >
   {#if title}
     <div class="section__header">
@@ -36,6 +36,10 @@
   .section {
     padding: 4rem 0;
     width: 100vw;
+
+    &--is-relative {
+      position: relative;
+    }
 
     &--is-highlighted {
       background-color: $c-section-bg;

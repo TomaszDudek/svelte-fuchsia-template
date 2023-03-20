@@ -17,6 +17,7 @@
     "prettier-plugin-svelte": "^2.9.0",
     "sass": "^1.53.0",
     "svelte": "^3.52.0",
+    "svelte-ken-burns-slideshow": "^1.0.4",
     "svelte-preprocess": "5.0.2",
     "vite": "4.2.0",
     "wnumb": "^1.2.0",
