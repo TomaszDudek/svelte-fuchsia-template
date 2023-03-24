@@ -106,7 +106,7 @@
       transition: border-color 240ms cubic-bezier(0.45, 0, 0.125, 1) 0s;
 
       &:hover {
-        border-color: hsl(var(--c-brand-primary) / .35);
+        border-color: hsl(var(--c-brand-primary) / 0.35);
       }
     }
 

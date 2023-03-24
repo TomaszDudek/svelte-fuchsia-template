@@ -94,7 +94,7 @@
 
     &__list-item {
       align-items: center;
-      border-right: 4px solid hsl(var(--c-brand-primary) / .25);
+      border-right: 4px solid hsl(var(--c-brand-primary) / 0.25);
       display: flex;
       height: 4px;
       justify-content: flex-end;
@@ -115,7 +115,7 @@
       opacity: 0;
       text-decoration: none;
       transition: opacity 300ms ease, color 125ms ease, font-size 350ms ease, margin 350ms ease;
-      color: hsl(var(--c-brand-primary) / .5);
+      color: hsl(var(--c-brand-primary) / 0.5);
       white-space: nowrap;
 
       &:hover {

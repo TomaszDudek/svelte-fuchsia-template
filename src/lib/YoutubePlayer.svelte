@@ -60,7 +60,7 @@
 
     &::after {
       position: absolute;
-      background-color: hsl(var(--c-brand-primary) / .5);
+      background-color: hsl(var(--c-brand-primary) / 0.5);
       content: '';
       top: 0;
       right: 0;
