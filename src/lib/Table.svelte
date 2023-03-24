@@ -119,13 +119,13 @@
   }
 
   :global(.noUi-target) {
-    border-color: rgba(fuchsia, 0.25);
+    border-color: hsl(var(--c-brand-primary) / .25);
   }
 
   :global(.noUi-connects) {
     background: rgba(black, 0.75);
 
-    @media (prefers-color-scheme: light) {
+    :global([data-theme='light']) & {
       background: white;
     }
   }
@@ -133,22 +133,22 @@
   :global(.noUi-handle) {
     background: rgba(black, 0.95);
     border-radius: 2px;
-    border: 1px solid $c-brand-primary;
-    box-shadow: inset 0 0 1px $c-brand-primary, inset 0 1px 7px rgba($c-brand-primary, 0.7),
-      0 3px 6px -3px rgba($c-brand-primary, 0.5);
+    border: 1px solid hsl(var(--c-brand-primary));
+    box-shadow: inset 0 0 1px hsl(var(--c-brand-primary)), inset 0 1px 7px hsl(var(--c-brand-primary) / .7),
+      0 3px 6px -3px hsl(var(--c-brand-primary) / .5);
     cursor: grab;
 
-    @media (prefers-color-scheme: light) {
+    :global([data-theme='light']) & {
       background: white;
       box-shadow: inset 0 0 1px #fff, inset 0 1px 7px #ebebeb, 0 3px 6px -3px #bbb;
     }
   }
 
   :global(.noUi-connect) {
-    background: rgba($c-brand-primary, 0.5);
+    background: hsl(var(--c-brand-primary) / .5);
 
-    @media (prefers-color-scheme: light) {
-      background: $c-brand-primary;
+    :global([data-theme='light']) & {
+      background: hsl(var(--c-brand-primary));
     }
   }
 
@@ -159,7 +159,7 @@
     pointer-events: none;
     transition: opacity 1800ms ease;
 
-    @media (prefers-color-scheme: light) {
+    :global([data-theme='light']) & {
       background: white;
       color: black;
     }
@@ -171,7 +171,7 @@
     opacity: 1;
     transition: opacity 150ms ease;
 
-    @media (prefers-color-scheme: light) {
+    :global([data-theme='light']) & {
       background: white;
       color: black;
     }
@@ -189,7 +189,7 @@
       font-size: 18px;
 
       th {
-        border-bottom: 2px solid rgba($c-brand-primary, 0.35);
+        border-bottom: 2px solid hsl(var(--c-brand-primary) / .35);
         cursor: pointer;
       }
     }
@@ -200,7 +200,7 @@
       font-weight: 300;
 
       &:nth-child(odd) {
-        background-color: rgba($c-brand-primary, 0.05);
+        background-color: hsl(var(--c-brand-primary) / .05);
       }
 
       &:last-child {
@@ -210,7 +210,7 @@
       }
 
       td {
-        border-bottom: 1px solid rgba($c-brand-primary, 0.15);
+        border-bottom: 1px solid hsl(var(--c-brand-primary) / .15);
         margin: 0;
         padding: 10px 5px;
       }

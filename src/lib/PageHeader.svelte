@@ -33,10 +33,15 @@
     z-index: 900;
 
     &--is-sticky {
+      backdrop-filter: blur(5px);
       background-color: rgba(white, 0.15);
       height: 72px;
       transition: all 400ms ease;
       box-shadow: rgba(black, 0.15) 0 1px 6px;
+
+      :global([data-theme='light']) & {
+        background-color: rgba(white, 0.85);
+      }
     }
 
     &__container {
@@ -46,7 +51,7 @@
 
     &__brand-holder {
       align-content: center;
-      color: $c-brand-primary;
+      color: hsl(var(--c-brand-primary));
       display: flex;
       flex-wrap: wrap;
       text-transform: uppercase;
@@ -59,12 +64,6 @@
     &__navigation-holder {
       display: flex;
       align-items: center;
-    }
-
-    @media (prefers-color-scheme: light) {
-      &--is-sticky {
-        background-color: rgba(white, 0.85);
-      }
     }
   }
 </style>
