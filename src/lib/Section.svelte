@@ -42,7 +42,7 @@
     }
 
     &--is-highlighted {
-      background-color: $c-section-bg;
+      background-color: var(--c-section-background);
     }
 
     &__container {

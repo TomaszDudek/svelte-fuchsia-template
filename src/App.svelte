@@ -101,9 +101,9 @@
     <h1 class="h1">Überschrift erster Ordnung</h1>
     <h2 class="h2">Überschrift zweiter Ordnung</h2>
     <p>
-      Lorem ipsum dolor sit amet, consetetur <a href="#" class="text-link">sadipscing elitr</a>, sed
-      diam nonumy eirmod tempor invidunt <a href="#" class="text-link">ut labore et dolore</a> magna
-      aliquyam erat, sed <a href="#" class="text-link">diam voluptua</a>. At vero eos et accusam et
+      Lorem ipsum dolor sit amet, consetetur <a href="/" class="text-link">sadipscing elitr</a>, sed
+      diam nonumy eirmod tempor invidunt <a href="/" class="text-link">ut labore et dolore</a> magna
+      aliquyam erat, sed <a href="/" class="text-link">diam voluptua</a>. At vero eos et accusam et
       justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
       ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
       eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos

@@ -52,7 +52,7 @@
 
 <style lang="scss">
   .youtube-player {
-    border: 1px dotted $c-brand-primary;
+    border: 1px dotted hsl(var(--c-brand-primary));
     position: relative;
     height: 0;
     padding-top: 40%;
@@ -60,7 +60,7 @@
 
     &::after {
       position: absolute;
-      background-color: rgba($c-brand-primary, 0.5);
+      background-color: hsl(var(--c-brand-primary) / 0.5);
       content: '';
       top: 0;
       right: 0;

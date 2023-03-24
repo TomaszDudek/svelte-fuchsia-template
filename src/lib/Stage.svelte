@@ -41,7 +41,7 @@
 
 <style lang="scss">
   .stage {
-    border: 1px solid $c-brand-primary;
+    border: 1px solid hsl(var(--c-brand-primary));
     height: 100vh;
     padding-top: 100px;
     width: 100vw;

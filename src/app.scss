@@ -50,9 +50,18 @@
   line-height: 24px;
   font-weight: 400;
 
-  color-scheme: light dark; // todo: check this property
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color-scheme: light dark;
+
+  // Colors as HSL
+  --c-brand-primary: 300 100% 50%;
+  --c-brand-primary--dark: 300 100% 40%;
+
+  --c-brand-secoundary: 180 100% 50%;
+
+  --c-white: 0 0% 100%;
+  --c-black: 0 0% 0%;
+
+  --c-section-background: #747bff24;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -61,23 +70,25 @@
   -webkit-text-size-adjust: 100%;
 }
 
-a {
-  font-weight: 500;
-  color: darken($c-brand-primary, 20%);
-  text-decoration: inherit;
-}
-
-a:hover {
-  color: $c-brand-primary;
-}
-
 body {
+  --c-main-text: var(--c-white);
+  --c-main-background: var(--c-black);
+
+  [data-theme='light'] & {
+    --c-main-text: var(--c-black);
+    --c-main-background: var(--c-white);
+  }
+
+  background-color: hsl(var(--c-main-background));
+  color: hsl(var(--c-main-text));
   display: flex;
   margin: 0;
   min-height: 100vh;
   min-width: 320px;
   place-items: center;
   position: relative;
+  text-align: center;
+  transition: background-color 500ms ease-out, color 300ms ease;
 }
 
 h1 {
@@ -85,17 +96,12 @@ h1 {
   line-height: 1.1;
 }
 
-#app {
-  text-align: center;
-}
+a {
+  font-weight: 500;
+  color: hsl(var(--c-brand-primary));
+  text-decoration: none;
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-
-  a:hover {
-    color: #747bff;
+  &:hover {
+    color: hsl(var(--c-brand-primary--dark));
   }
 }
