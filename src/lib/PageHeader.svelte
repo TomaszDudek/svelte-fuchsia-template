@@ -45,7 +45,10 @@
     }
 
     &__brand-holder {
-      color: darken($c-brand-primary, 20%);
+      align-content: center;
+      color: $c-brand-primary;
+      display: flex;
+      flex-wrap: wrap;
       text-transform: uppercase;
     }
 

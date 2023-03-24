@@ -1,6 +1,6 @@
 <script>
   import { onMount } from 'svelte';
-  import { sectionNavItems } from '../store.js';
+  import { sectionNavItems, colorScheme } from '../store.js';
 
   export let title = '';
   export let highlighted = false;
@@ -17,7 +17,12 @@
 </script>
 
 <section
-  class={['section', highlighted ? 'section--is-highlighted' : '', $$props.class].join(' ')}
+  class={[
+    'section',
+    $colorScheme,
+    highlighted ? 'section--is-highlighted' : '',
+    $$props.class,
+  ].join(' ')}
   style={[noPaddingBottom ? 'padding-bottom: 0' : '', $$props.style].join(' ')}
   {id}
 >

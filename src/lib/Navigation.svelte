@@ -144,7 +144,7 @@
 
     &__link {
       // todo: create font style for menu links
-      color: darken($c-brand-primary, 20%);
+      color: $c-brand-primary;
       display: block;
       text-align: center;
     }
