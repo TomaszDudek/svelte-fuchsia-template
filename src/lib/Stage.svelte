@@ -41,9 +41,11 @@
 
 <style lang="scss">
   .stage {
+    align-content: center;
     border: 1px solid hsl(var(--c-brand-primary));
+    display: flex;
+    flex-wrap: wrap;
     height: 100vh;
-    padding-top: 100px;
     width: 100vw;
 
     &__container {
