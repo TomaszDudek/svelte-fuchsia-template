@@ -17,7 +17,7 @@
 </script>
 
 <section class="stage" {id}>
-  <div>
+  <div class="stage__container">
     <h1>Hallo {brandName}!</h1>
     <a href="https://fuchsia.tomaszdudek.de/" target="_blank" rel="noreferrer">
       <img src={fuchsiaLogo} class="logo fuchsia" alt="Fuchsia Logo" />
@@ -28,15 +28,15 @@
     <a href="https://svelte.dev" target="_blank" rel="noreferrer">
       <img src={svelteLogo} class="logo svelte" alt="Svelte Logo" />
     </a>
-  </div>
 
-  <h2>Fuchsia + Vite + Svelte</h2>
-  <p>
-    Check out <a href="https://github.com/sveltejs/kit#readme" target="_blank" rel="noreferrer"
-      >SvelteKit</a
-    >, the official Svelte app framework powered by Vite!
-  </p>
-  <p class="read-the-docs">Click on the Vite and Svelte logos to learn more</p>
+    <h2>Fuchsia + Vite + Svelte</h2>
+    <p>
+      Check out <a href="https://github.com/sveltejs/kit#readme" target="_blank" rel="noreferrer"
+        >SvelteKit</a
+      >, the official Svelte app framework powered by Vite!
+    </p>
+    <p class="read-the-docs">Click on the Vite and Svelte logos to learn more</p>
+  </div>
 </section>
 
 <style lang="scss">
@@ -45,6 +45,10 @@
     height: 100vh;
     padding-top: 100px;
     width: 100vw;
+
+    &__container {
+      @extend %container;
+    }
   }
 
   .logo {

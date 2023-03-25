@@ -46,7 +46,7 @@
     }
 
     &__container {
-      @extend .container;
+      @extend %container;
     }
   }
 </style>

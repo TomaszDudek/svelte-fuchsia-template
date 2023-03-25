@@ -227,7 +227,7 @@
     <Table tableData={data} showSlider="true" />
   </Section>
   <Section class="section--is-relative" sectionContainer="false" style="aspect-ratio: 16 / 9">
-    <KenBurns images={gallery} />
+    <KenBurns --skbs-pagination-offset-bottom="3px" images={gallery} />
   </Section>
   <Section title="Buttons">
     <button type="button">button Text</button>
