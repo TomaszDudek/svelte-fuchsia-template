@@ -1,6 +1,4 @@
 <script>
-  import SvgIcon from './SvgIcon.svelte';
-  import { lightBulbLine } from '../assets/icons/icons.js';
   import { onMount } from 'svelte';
 
   const storageKey = 'theme-preference';

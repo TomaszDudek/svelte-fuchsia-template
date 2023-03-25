@@ -8,7 +8,7 @@
   };
 </script>
 
-<div class="back-to-top" on:click={goTop}>
+<div class="back-to-top" on:click={goTop} on:keypress={goTop}>
   <div class="back-to-top__svg-container">
     <svg
       class="large"
