@@ -204,7 +204,7 @@
       te feugait nulla facilisi.
     </p>
   </Section>
-  <YoutubePlayer videoId="5mpafLYHVd0" />
+  <!--<YoutubePlayer videoId="5mpafLYHVd0" />-->
   <Section highlighted>
     <p>{loremIpsum}</p>
   </Section>
@@ -216,9 +216,9 @@
     <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
     <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
   </Section>
-  <Section title="The Youtube Player" sectionContainer="false" noPaddingBottom="true">
+  <!--<Section title="The Youtube Player" sectionContainer="false" noPaddingBottom="true">
     <YoutubePlayer />
-  </Section>
+  </Section>-->
   <Section title="The Tabs Component" highlighted="true">
     <Tabs {tabsItems} />
   </Section>
