@@ -4,8 +4,6 @@
 
   export let tabsItems = [];
   export let activeTabValue = 0;
-
-  // TODO extract utility for generating id?
   export let id = `${Date.now().toString()}`;
   const buttonRefs = new Array(tabsItems.length);
 
@@ -81,10 +79,10 @@
 
     &__list-item {
       &.active {
-        color: fuchsia;
+        color: hsl(var(--c-brand-primary));
 
         .tabs__button {
-          border-bottom-color: fuchsia;
+          border-bottom-color: hsl(var(--c-brand-primary));
         }
       }
     }
@@ -96,6 +94,7 @@
       border-bottom-style: solid;
       border-width: 0 0 2px;
       cursor: pointer;
+      color: hsl(var(--c-main-text));
       display: flex;
       flex-direction: column;
       gap: 3px;
@@ -107,7 +106,7 @@
       transition: border-color 240ms cubic-bezier(0.45, 0, 0.125, 1) 0s;
 
       &:hover {
-        border-color: gray;
+        border-color: hsl(var(--c-brand-primary) / 0.35);
       }
     }
 
@@ -116,7 +115,7 @@
     }
 
     &__panel {
-      border: 1px dotted fuchsia; // todo: remove before merge!
+      border: 1px dotted hsl(var(--c-brand-primary)); // todo: remove before merge!
     }
   }
 </style>

@@ -1,4 +1,4 @@
-.container {
+%container {
   @include clearfix;
   // @include dev-bg;
 
@@ -14,4 +14,8 @@
   @include breakpoint($bp-tablet-portrait-min) {
     max-width: 80vw;
   }
+}
+
+.container {
+  @extend %container;
 }

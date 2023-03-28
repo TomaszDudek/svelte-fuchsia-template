@@ -47,22 +47,23 @@
       padding: 1em;
       transition: border-color 635ms ease, box-shadow 3250ms ease;
       width: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      border-color: rgba(255, 255, 255, 0.5);
-      color: rgba(255, 255, 255, 0.75);
+      background-color: hsl(var(--c-black) / 0.5);
+      border-color: hsl(var(--c-white) / 0.5);
+      color: hsl(var(--c-white) / 0.75);
 
       &:active,
       &:focus {
-        border-color: #db00db;
-        box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%), 0 0 8px rgb(255 0 255 / 60%);
+        border-color: hsl(var(--c-brand-primary--dark));
+        box-shadow: inset 0 1px 1px hsl(var(--c-black) / 0.08),
+          0 0 8px hsl(var(--c-brand-primary) / 0.6);
         outline: 0;
         transition: border-color 125ms ease, box-shadow 200ms ease;
       }
 
-      @media (prefers-color-scheme: light) {
-        background-color: rgba(255, 255, 255, 0.5);
-        border-color: rgba(0, 0, 0, 0.5);
-        color: black;
+      :global([data-theme='light']) & {
+        background-color: hsl(var(--c-white) / 0.5);
+        border-color: hsl(var(--c-black) / 0.5);
+        color: hsl(var(--c-black));
       }
     }
   }

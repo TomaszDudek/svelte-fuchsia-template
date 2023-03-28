@@ -86,7 +86,7 @@
       height: 175px;
       justify-content: center;
       margin: 0;
-      padding: 0;
+      padding: 0 20px;
       width: 175px;
     }
 

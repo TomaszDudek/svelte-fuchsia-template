@@ -1,4 +1,5 @@
 <script>
+  import { style } from 'svelte-body';
   import DarkModeToggle from './DarkModeToggle.svelte';
 
   export let items = [
@@ -14,8 +15,11 @@
   const toggle = () => {
     navigationOpen = !navigationOpen;
   };
+
+  $: scrollLock = navigationOpen ? 'overflow: hidden' : '';
 </script>
 
+<svelte:body use:style={scrollLock} />
 <nav class="navigation">
   <div class="navigation__container {navigationOpen ? 'navigation__container--is-open' : ''}">
     <ul class="navigation__list">
@@ -42,22 +46,19 @@
   </div>
   <div class="navigation__random-action-container">
     <DarkModeToggle />
-    <!--
-        <div class="dark-mode-toggle" data-component="DarkModeToggleComponent">
-            <button type="button" class="dark-mode-toggle__button" aria-label="toggle dark mode">
-                <svg class="dark-mode-toggle__button-icon">
-                    <use xlink:href="#sprite-lightbulb-line"></use>
-                </svg>
-            </button>
-        </div>
-        -->
   </div>
   <button
-    class="navigation__button navigation__button--open"
+    class={['navigation__button navigation__button--open', navigationOpen ? 'hide' : ''].join(' ')}
     aria-label="Open navigation"
     on:click={toggle}
   >
-    <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      class="icon icon--burger-menu"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <path d="M3 4H21V6H3V4ZM3 11H21V13H3V11ZM3 18H21V20H3V18Z" />
     </svg>
   </button>
@@ -145,7 +146,7 @@
 
     &__link {
       // todo: create font style for menu links
-      color: darken($c-brand-primary, 20%);
+      color: hsl(var(--c-brand-primary));
       display: block;
       text-align: center;
     }
@@ -167,6 +168,14 @@
         display: none;
       }
 
+      &--open {
+        transition: transform 300ms ease;
+
+        &.hide {
+          transform: scale(0);
+        }
+      }
+
       &--close {
         animation: 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.5s 1 normal both running blob-up;
         fill: white;
@@ -174,6 +183,14 @@
         right: 20px;
         top: 25px;
       }
+    }
+  }
+
+  .icon--burger-menu {
+    fill: white;
+
+    :global([data-theme='light']) & {
+      fill: black;
     }
   }
 
