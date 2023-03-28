@@ -84,6 +84,7 @@
         display: block;
         height: 100%;
         left: 0;
+        min-height: 100vh;
         position: fixed;
         top: 0;
         width: 100%;
